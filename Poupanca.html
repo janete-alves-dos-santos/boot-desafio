@@ -30,20 +30,20 @@
     <script>
 
 
-        var saidaSaldo = document.getElementById("saldo");
-        var saidaExtrato = document.getElementById("extrato");
-        var valorHTML = document.getElementById("valor");
+        let saidaSaldo = document.getElementById("saldo");
+        let saidaExtrato = document.getElementById("extrato");
+        let valorHTML = document.getElementById("valor");
 
 
         function dataCurta() {
 
-            var data = new Date();
+            let data = new Date();
            
-            var d = data.getDate();
-            var m = data.getMonth()+1;
-            var a = data.getFullYear();
-            var h = data.getHours();
-            var mi = data.getMinutes();
+            let d = data.getDate();
+            let m = data.getMonth()+1;
+            let a = data.getFullYear();
+            let h = data.getHours();
+            let mi = data.getMinutes();
 
             if(d.toString.length==1) {
 
@@ -70,14 +70,14 @@
 
 
 
-        var poupanca = {
+        let poupanca = {
 
             saldo: 0,
             movimentacao: [],
 
             depositar: function() {
 
-                var valor = Number(valorHTML.value);
+                const valor = Number(valorHTML.value);
 
                 this.saldo += valor;
                 saidaSaldo.innerHTML = "R$ " +this.saldo.toFixed(2);
@@ -88,7 +88,7 @@
             sacar: function() {
 
                 
-                var valor = Number(valorHTML.value);
+                const valor = Number(valorHTML.value);
                 if(valor>this.saldo) {
                     alert("Saldo Insuficiente!");
                 } else {
